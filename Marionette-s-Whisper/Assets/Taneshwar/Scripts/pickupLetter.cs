@@ -1,59 +1,61 @@
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Collect : MonoBehaviour
+public class pickupLetter : MonoBehaviour
 {
     public GameObject collectTextObj, intText;
-    public AudioSource pickupsound, a1, a2, a3, a4;
+    public AudioSource pickupSound, ambianceLayer1, ambianceLayer2, ambianceLayer3, ambianceLayer4;
     public bool interactable;
-    public static int pagescollected;
-    public Text collecText;
+    public static int pagesCollected;
+    public Text collectText;
 
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Main Camera"))
+        if (other.CompareTag("MainCamera"))
         {
             intText.SetActive(true);
             interactable = true;
         }
     }
-
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Main Camera"))
+        if (other.CompareTag("MainCamera"))
         {
             intText.SetActive(false);
             interactable = false;
         }
     }
-    void update()
+    void Update()
     {
         if (interactable == true)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                pagescollected = pagescollected + 1;
-                collecText.text = pagescollected + "/4 collected";
+                pagesCollected = pagesCollected + 1;
+                collectText.text = pagesCollected + "/4 pages";
                 collectTextObj.SetActive(true);
-                pickupsound.Play();
-                if (pagescollected == 1)
+                pickupSound.Play();
+                if (pagesCollected == 1)
                 {
-                    a1.Play();
+                    ambianceLayer1.Play();
                 }
-                if (pagescollected == 2)
+                if (pagesCollected == 2)
                 {
-                    a2.Play();
+                    ambianceLayer2.Play();
                 }
-                if (pagescollected == 3)
+                if (pagesCollected == 3)
                 {
-                    a3.Play();
+                    ambianceLayer3.Play();
                 }
-                if (pagescollected == 4)
+                if (pagesCollected == 4)
                 {
-                    a4.Play();
+                    ambianceLayer4.Play();
                 }
+                
                 intText.SetActive(false);
                 this.gameObject.SetActive(false);
                 interactable = false;
