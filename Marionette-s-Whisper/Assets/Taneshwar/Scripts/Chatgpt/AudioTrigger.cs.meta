@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Marionette-s-Whisper/Assets/Taneshwar/Scripts/Chatgpt/AudioTrigger.cs.meta
 guid: ef043ed4327d3f14a8da9d7d405b60b2
+========
+guid: dd7bb464f90426049951529f8388342b
+>>>>>>>> 0c272c9a36237107a37585355f8564afd0cb71f4:Marionette-s-Whisper/Assets/MainMenu.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
